@@ -74,9 +74,9 @@ export default function BillingPage() {
           <p className="mt-1 text-sm text-gray-500">Gestiona las preferencias de tu organización.</p>
         </motion.div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-col gap-8 md:flex-row md:gap-6">
           {/* Sidebar */}
-          <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="w-48 shrink-0">
+          <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="w-full shrink-0 md:w-48">
             <nav className="space-y-1">
               {SIDEBAR_ITEMS.map((item) => (
                 <Link key={item.href} href={item.href} className={cn("flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all", item.active ? "bg-[#0c365c] text-white" : "text-gray-600 hover:bg-gray-100")}>
@@ -90,7 +90,7 @@ export default function BillingPage() {
           <div className="flex-1 space-y-5">
             {/* Current plan */}
             <motion.div variants={slideUp} initial="hidden" animate="visible" className="rounded-2xl border border-[#0c365c]/20 bg-linear-to-br from-[#0c365c]/5 to-[#167fd0]/5 p-6">
-              <div className="flex items-start justify-between">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <Crown className="h-5 w-5 text-amber-500" />
@@ -100,7 +100,7 @@ export default function BillingPage() {
                   <p className="text-3xl font-black text-[#0c365c]">S/ 17,500<span className="text-base font-normal text-gray-500">/mes</span></p>
                   <p className="text-sm text-gray-600 mt-1">Próxima factura: 1 de Junio 2026</p>
                 </div>
-                <Button variant="outline" className="rounded-xl text-sm" onClick={() => toast.info("Contacta a ventas para cambiar de plan.")}>
+                <Button variant="outline" className="w-full shrink-0 rounded-xl text-sm sm:w-auto" onClick={() => toast.info("Contacta a ventas para cambiar de plan.")}>
                   Cambiar plan
                 </Button>
               </div>
@@ -158,7 +158,8 @@ export default function BillingPage() {
               <div className="border-b border-gray-100 px-6 py-4 flex items-center justify-between">
                 <h2 className="text-base font-semibold text-gray-900">Historial de facturas</h2>
               </div>
-              <table className="w-full text-sm">
+              <div className="overflow-x-auto">
+              <table className="w-full min-w-[520px] text-sm">
                 <thead>
                   <tr className="border-b border-gray-100 bg-gray-50">
                     <th className="px-5 py-3 text-left text-xs font-medium text-gray-500">Número</th>
@@ -187,17 +188,18 @@ export default function BillingPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </motion.div>
 
             {/* Plan comparison / upgrade CTA */}
             <motion.div variants={slideUp} initial="hidden" animate="visible">
-              <div className="mb-4 rounded-2xl bg-amber-50 border border-amber-200 px-5 py-4 flex items-center gap-3">
+              <div className="mb-4 flex flex-col gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 sm:flex-row sm:items-center">
                 <Crown className="h-5 w-5 text-amber-500 shrink-0" />
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-amber-800">¿Listo para escalar?</p>
                   <p className="text-xs text-amber-700">El plan Enterprise incluye API avanzada, SLA garantizado y manager de cuenta dedicado.</p>
                 </div>
-                <Button size="sm" className="shrink-0 bg-amber-500 hover:bg-amber-600 text-white rounded-xl" onClick={() => toast.info("El equipo de ventas te contactará pronto.")}>
+                <Button size="sm" className="w-full shrink-0 rounded-xl bg-amber-500 text-white hover:bg-amber-600 sm:w-auto" onClick={() => toast.info("El equipo de ventas te contactará pronto.")}>
                   Hablar con ventas
                 </Button>
               </div>

@@ -87,9 +87,9 @@ export default function IntegrationsPage() {
           <p className="mt-1 text-sm text-gray-500">Gestiona las preferencias de tu organización.</p>
         </motion.div>
 
-        <div className="flex gap-6">
+        <div className="flex flex-col gap-8 md:flex-row md:gap-6">
           {/* Sidebar */}
-          <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="w-48 shrink-0">
+          <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} className="w-full shrink-0 md:w-48">
             <nav className="space-y-1">
               {SIDEBAR_ITEMS.map((item) => (
                 <Link key={item.href} href={item.href} className={cn("flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-all", item.active ? "bg-[#0c365c] text-white" : "text-gray-600 hover:bg-gray-100")}>

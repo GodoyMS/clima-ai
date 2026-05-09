@@ -8,6 +8,10 @@ interface AdminState {
   toggleSidebar: () => void
   setSidebarOpen: (open: boolean) => void
 
+  /** Left drawer on small viewports (Sheet), same idea as shadcn Sidebar mobile */
+  mobileSidebarOpen: boolean
+  setMobileSidebarOpen: (open: boolean) => void
+
   commandPaletteOpen: boolean
   toggleCommandPalette: () => void
   setCommandPaletteOpen: (open: boolean) => void
@@ -28,6 +32,9 @@ export const useAdminStore = create<AdminState>()(
       sidebarOpen: true,
       toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
       setSidebarOpen: (open: boolean) => set({ sidebarOpen: open }),
+
+      mobileSidebarOpen: false,
+      setMobileSidebarOpen: (open: boolean) => set({ mobileSidebarOpen: open }),
 
       commandPaletteOpen: false,
       toggleCommandPalette: () =>

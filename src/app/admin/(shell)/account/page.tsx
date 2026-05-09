@@ -24,8 +24,8 @@ const NOTIFICATION_PREFS = [
 
 export default function AccountPage() {
   const [name, setName] = useState("Patricia Flores Ríos")
-  const [email, setEmail] = useState("patricia.flores@climaai.mx")
-  const [phone, setPhone] = useState("+52 55 1234-5608")
+  const [email, setEmail] = useState("patricia.flores@climaai.pe")
+  const [phone, setPhone] = useState("+51 1 234-5608")
   const [role, setRole] = useState("Directora de RRHH")
   const [darkMode, setDarkMode] = useState(false)
   const [notifications, setNotifications] = useState<Record<string, boolean>>(

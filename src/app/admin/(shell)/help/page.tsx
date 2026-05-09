@@ -21,7 +21,7 @@ const FAQ = [
   },
   {
     q: "¿Qué tan segura es la información de mis empleados?",
-    a: "CLIMA AI está diseñado con privacidad como prioridad. Toda la información está cifrada en tránsito y en reposo (AES-256). Los pulsos pueden configurarse como anónimos, y los resultados individuales solo se muestran a los administradores autorizados. Cumplimos con GDPR, LFPDPPP (México) y SOC 2 Type II."
+    a: "CLIMA AI está diseñado con privacidad como prioridad. Toda la información está cifrada en tránsito y en reposo (AES-256). Los pulsos pueden configurarse como anónimos, y los resultados individuales solo se muestran a los administradores autorizados. Cumplimos con GDPR, la Ley N.º 29733 y su Reglamento (protección de datos personales, Perú) y SOC 2 Type II."
   },
   {
     q: "¿Cómo configuro un pulso recurrente?",

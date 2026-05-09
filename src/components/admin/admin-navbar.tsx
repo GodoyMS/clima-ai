@@ -56,7 +56,7 @@ function getBreadcrumb(pathname: string): { label: string; href?: string }[] {
 export function AdminNavbar() {
   const pathname = usePathname()
   const router = useRouter()
-  const { toggleSidebar, unreadCount, setCommandPaletteOpen } = useAdminStore()
+  const { toggleSidebar, setMobileSidebarOpen, unreadCount, setCommandPaletteOpen } = useAdminStore()
   const { user, logout: storeLogout } = useAuthStore()
   const breadcrumb = getBreadcrumb(pathname)
 
@@ -71,43 +71,63 @@ export function AdminNavbar() {
   }
 
   return (
-    <header className="flex h-16 flex-shrink-0 items-center gap-4 border-b border-gray-100 bg-white px-4 shadow-sm">
-      {/* Hamburger */}
+    <header className="sticky top-0 z-40 flex h-14 flex-shrink-0 items-center gap-2 border-b border-gray-100 bg-white px-3 shadow-sm sm:h-16 sm:gap-4 sm:px-4">
+      {/* Mobile: open navigation sheet */}
       <button
+        type="button"
+        onClick={() => setMobileSidebarOpen(true)}
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 md:hidden"
+        aria-label="Abrir menú de navegación"
+      >
+        <Menu className="h-5 w-5" />
+      </button>
+      {/* Desktop: collapse sidebar rail */}
+      <button
+        type="button"
         onClick={toggleSidebar}
-        className="flex h-9 w-9 items-center justify-center rounded-xl text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
-        aria-label="Toggle sidebar"
+        className="hidden h-9 w-9 shrink-0 items-center justify-center rounded-xl text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 md:flex"
+        aria-label="Contraer o expandir menú lateral"
       >
         <Menu className="h-5 w-5" />
       </button>
 
       {/* Breadcrumb */}
-      <div className="flex flex-1 items-center gap-1.5 text-sm">
-        <span className="text-xs font-medium text-gray-400">Admin</span>
+      <nav aria-label="Ruta" className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden text-sm sm:gap-1.5">
+        <span className="hidden shrink-0 text-xs font-medium text-gray-400 sm:inline">Admin</span>
         {breadcrumb.map((crumb, i) => (
-          <span key={i} className="flex items-center gap-1.5">
-            <ChevronRight className="h-3.5 w-3.5 text-gray-300" />
+          <span key={i} className="flex min-w-0 items-center gap-1 sm:gap-1.5">
+            <ChevronRight
+              className={cn(
+                "h-3.5 w-3.5 shrink-0 text-gray-300",
+                i === 0 ? "hidden sm:block" : "block"
+              )}
+            />
             {crumb.href ? (
-              <a href={crumb.href} className="font-medium text-gray-500 hover:text-[#0c365c] transition-colors">
+              <a
+                href={crumb.href}
+                className="truncate font-medium text-gray-500 transition-colors hover:text-[#0c365c]"
+              >
                 {crumb.label}
               </a>
             ) : (
-              <span className="font-semibold text-gray-800">{crumb.label}</span>
+              <span className="truncate font-semibold text-gray-800">{crumb.label}</span>
             )}
           </span>
         ))}
-      </div>
+      </nav>
 
       {/* Right actions */}
-      <div className="flex items-center gap-2">
+      <div className="flex shrink-0 items-center gap-1 sm:gap-2">
         {/* Search */}
         <button
+          type="button"
           onClick={() => setCommandPaletteOpen(true)}
-          className="flex h-9 items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 text-sm text-gray-400 transition-colors hover:border-gray-300 hover:bg-white hover:text-gray-600"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-gray-200 bg-gray-50 text-gray-400 transition-colors hover:border-gray-300 hover:bg-white hover:text-gray-600 sm:w-auto sm:gap-2 sm:px-3"
+          aria-label="Buscar"
         >
           <Search className="h-4 w-4" />
-          <span className="hidden md:block">Buscar...</span>
-          <kbd className="hidden rounded border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-400 md:block">
+          <span className="hidden md:inline">Buscar...</span>
+          <kbd className="hidden rounded border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-medium text-gray-400 lg:inline">
             ⌘K
           </kbd>
         </button>

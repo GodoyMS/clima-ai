@@ -165,7 +165,7 @@ export default function AdminLoginPage() {
                 {...register("email")}
                 type="email"
                 autoComplete="email"
-                placeholder="admin@climaai.mx"
+                placeholder="admin@climaai.pe"
                 className={cn(
                   "w-full rounded-xl border bg-gray-50 px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all",
                   "focus:border-[#0c365c] focus:bg-white focus:ring-2 focus:ring-[#0c365c]/10",
@@ -241,7 +241,7 @@ export default function AdminLoginPage() {
             <div className="space-y-1">
               <p className="text-xs text-gray-600">
                 <span className="font-medium">Email:</span>{" "}
-                <code className="rounded bg-white px-1.5 py-0.5 text-[#0c365c]">admin@climaai.mx</code>
+                <code className="rounded bg-white px-1.5 py-0.5 text-[#0c365c]">admin@climaai.pe</code>
               </p>
               <p className="text-xs text-gray-600">
                 <span className="font-medium">Contraseña:</span>{" "}

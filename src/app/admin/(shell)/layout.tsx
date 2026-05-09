@@ -12,7 +12,7 @@ export default function AdminShellLayout({
       <AdminSidebar />
       <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
         <AdminNavbar />
-        <main className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+        <main className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden [-webkit-overflow-scrolling:touch]">
           {children}
         </main>
       </div>

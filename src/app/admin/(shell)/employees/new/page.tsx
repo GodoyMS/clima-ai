@@ -181,7 +181,7 @@ export default function NewEmployeePage() {
               <input
                 {...register("email")}
                 type="email"
-                placeholder="ana.garcia@climaai.mx"
+                placeholder="ana.garcia@climaai.pe"
                 className={inputClass(!!errors.email)}
               />
             </FormField>
@@ -190,7 +190,7 @@ export default function NewEmployeePage() {
               <input
                 {...register("phone")}
                 type="tel"
-                placeholder="+52 55 1234-5678"
+                placeholder="+51 1 234-5678"
                 className={inputClass(!!errors.phone)}
               />
             </FormField>
@@ -198,7 +198,7 @@ export default function NewEmployeePage() {
             <FormField label="Ubicación" error={errors.location?.message}>
               <input
                 {...register("location")}
-                placeholder="Ciudad de México"
+                placeholder="Lima"
                 className={inputClass(!!errors.location)}
               />
             </FormField>

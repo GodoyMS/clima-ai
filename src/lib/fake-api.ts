@@ -83,7 +83,7 @@ export async function createEmployee(data: Partial<Employee>): Promise<Employee>
   const newEmployee: Employee = {
     id: `emp-${Date.now()}`,
     name: data.name ?? 'Nuevo Empleado',
-    email: data.email ?? 'nuevo@climaai.mx',
+    email: data.email ?? 'nuevo@climaai.pe',
     avatar: data.avatar ?? `https://api.dicebear.com/7.x/avataaars/svg?seed=${Date.now()}`,
     department: data.department ?? 'Sin asignar',
     role: data.role ?? 'Colaborador',
@@ -99,7 +99,7 @@ export async function createEmployee(data: Partial<Employee>): Promise<Employee>
     lastPulse: '',
     streakDays: 0,
     badges: [],
-    location: data.location ?? 'Ciudad de México',
+    location: data.location ?? 'Lima',
     phone: data.phone ?? '',
   }
   return newEmployee
@@ -326,7 +326,7 @@ export async function fetchMessages(): Promise<Message[]> {
 const ADMIN_USER: User = {
   id: 'emp-008',
   name: 'Patricia Flores Ríos',
-  email: 'admin@climaai.mx',
+  email: 'admin@climaai.pe',
   avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Patricia',
   role: 'admin',
   department: 'Recursos Humanos',
@@ -336,7 +336,7 @@ const ADMIN_USER: User = {
 const EMPLOYEE_USER: User = {
   id: 'emp-001',
   name: 'Carlos García Morales',
-  email: 'carlos.garcia@climaai.mx',
+  email: 'carlos.garcia@climaai.pe',
   avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos',
   role: 'employee',
   department: 'Ingeniería',
