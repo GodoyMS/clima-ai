@@ -21,17 +21,17 @@ const SIDEBAR_ITEMS = [
 ]
 
 const INVOICES = [
-  { date: "01 Abr 2026", amount: "$4,788", status: "paid", number: "INV-2026-04" },
-  { date: "01 Mar 2026", amount: "$4,788", status: "paid", number: "INV-2026-03" },
-  { date: "01 Feb 2026", amount: "$4,788", status: "paid", number: "INV-2026-02" },
-  { date: "01 Ene 2026", amount: "$4,788", status: "paid", number: "INV-2026-01" },
-  { date: "01 Dic 2025", amount: "$4,788", status: "paid", number: "INV-2025-12" },
+  { date: "01 Abr 2026", amount: "S/ 17,500", status: "paid", number: "INV-2026-04" },
+  { date: "01 Mar 2026", amount: "S/ 17,500", status: "paid", number: "INV-2026-03" },
+  { date: "01 Feb 2026", amount: "S/ 17,500", status: "paid", number: "INV-2026-02" },
+  { date: "01 Ene 2026", amount: "S/ 17,500", status: "paid", number: "INV-2026-01" },
+  { date: "01 Dic 2025", amount: "S/ 17,500", status: "paid", number: "INV-2025-12" },
 ]
 
 const PLANS = [
   {
     name: "Starter",
-    price: "$1,299",
+    price: "S/ 4,750",
     period: "/mes",
     employees: "Hasta 25",
     current: false,
@@ -40,7 +40,7 @@ const PLANS = [
   },
   {
     name: "Professional",
-    price: "$4,788",
+    price: "S/ 17,500",
     period: "/mes",
     employees: "Hasta 100",
     current: true,
@@ -97,7 +97,7 @@ export default function BillingPage() {
                     <h2 className="text-base font-semibold text-gray-900">Plan Professional</h2>
                     <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-700">Activo</span>
                   </div>
-                  <p className="text-3xl font-black text-[#0c365c]">$4,788<span className="text-base font-normal text-gray-500">/mes</span></p>
+                  <p className="text-3xl font-black text-[#0c365c]">S/ 17,500<span className="text-base font-normal text-gray-500">/mes</span></p>
                   <p className="text-sm text-gray-600 mt-1">Próxima factura: 1 de Junio 2026</p>
                 </div>
                 <Button variant="outline" className="rounded-xl text-sm" onClick={() => toast.info("Contacta a ventas para cambiar de plan.")}>
@@ -173,7 +173,7 @@ export default function BillingPage() {
                     <tr key={inv.number} className="hover:bg-gray-50/50 transition-colors">
                       <td className="px-5 py-3 text-xs font-mono text-gray-600">{inv.number}</td>
                       <td className="px-5 py-3 text-xs text-gray-600">{inv.date}</td>
-                      <td className="px-5 py-3 text-xs font-semibold text-gray-900">{inv.amount} MXN</td>
+                      <td className="px-5 py-3 text-xs font-semibold text-gray-900">{inv.amount}</td>
                       <td className="px-5 py-3">
                         <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-medium text-emerald-700">Pagada</span>
                       </td>

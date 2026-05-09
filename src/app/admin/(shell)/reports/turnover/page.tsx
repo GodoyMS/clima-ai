@@ -50,7 +50,7 @@ const TYPE_DATA = [
 const RETENTION_METRICS = [
   { label: "Retención general", value: "91.7%", icon: "✅" },
   { label: "Tiempo promedio en empresa", value: "2.4 años", icon: "📅" },
-  { label: "Costo por reemplazo estimado", value: "$180,000 MXN", icon: "💰" },
+  { label: "Costo por reemplazo estimado", value: "S/ 35,000", icon: "💰" },
   { label: "Tasa vs. industria", value: "-2.4pts mejor", icon: "📊" },
 ]
 

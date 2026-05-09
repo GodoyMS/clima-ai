@@ -1526,7 +1526,7 @@ export const MOCK_ANNOUNCEMENTS: Announcement[] = [
   {
     id: 'ann-005',
     title: 'Actualización del proceso de gastos y reembolsos',
-    content: 'A partir del 15 de mayo, usaremos Ramp como nuestra plataforma de gastos corporativos. Todos los colaboradores recibirán una tarjeta corporativa virtual en los próximos días. Los gastos aprobados ya no necesitan anticipos ni reembolsos posteriores — simplemente se cargan a la tarjeta. Los límites por categoría están en el documento adjunto en Notion. El proceso de aprobación previa sigue igual para gastos mayores a $5,000 MXN. Isabella de RRHH hará una sesión de capacitación el martes 13 de mayo a las 3pm.',
+    content: 'A partir del 15 de mayo, usaremos Ramp como nuestra plataforma de gastos corporativos. Todos los colaboradores recibirán una tarjeta corporativa virtual en los próximos días. Los gastos aprobados ya no necesitan anticipos ni reembolsos posteriores — simplemente se cargan a la tarjeta. Los límites por categoría están en el documento adjunto en Notion. El proceso de aprobación previa sigue igual para gastos mayores a S/ 1,000. Isabella de RRHH hará una sesión de capacitación el martes 13 de mayo a las 3pm.',
     authorId: 'emp-008',
     authorName: 'Patricia Flores Ríos',
     authorAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Patricia',
