@@ -76,7 +76,7 @@ export default function AdminLoginPage() {
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center rounded-xl bg-zinc-950 p-2.5 shadow-lg ring-1 ring-white/10">
+          <div className="flex items-center justify-center rounded-xl  p-2.5">
             <ClimaLogo size="lg" priority className="max-w-[200px]" />
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function AdminLoginPage() {
         <div className="w-full max-w-md space-y-8">
           {/* Mobile logo */}
           <div className="flex items-center justify-center lg:hidden">
-            <div className="rounded-xl bg-zinc-950 p-2.5 ring-1 ring-black/5">
+            <div className="rounded-xl ">
               <ClimaLogo size="md" className="max-w-[180px]" />
             </div>
           </div>

@@ -244,7 +244,7 @@ function SidebarChrome({
       >
         <div
           className={cn(
-            "flex shrink-0 items-center justify-center rounded-xl bg-zinc-950 p-1.5 shadow-md ring-1 ring-black/5",
+            "flex shrink-0 items-center justify-center rounded-xl  p-1.5 ",
             sidebarOpen ? "min-h-10 px-2" : "h-10 w-10 px-1"
           )}
         >
